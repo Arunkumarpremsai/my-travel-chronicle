@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-import { BlogPost, Category } from '@/data/blogPosts';
+import { BlogPost } from '@/data/blogPosts';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 // Import images
 import takayamaImg from '@/assets/images/takayama.jpg';
@@ -24,20 +23,6 @@ interface HeroProps {
   post: BlogPost;
 }
 
-const categoryStyles: Record<Category, string> = {
-  destinations: 'category-destinations',
-  tips: 'category-tips',
-  food: 'category-food',
-  culture: 'category-culture',
-};
-
-const categoryLabels: Record<Category, string> = {
-  destinations: 'Destinations',
-  tips: 'Tips',
-  food: 'Food',
-  culture: 'Culture',
-};
-
 const Hero = ({ post }: HeroProps) => {
   const formattedDate = new Date(post.publishedAt).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -49,7 +34,6 @@ const Hero = ({ post }: HeroProps) => {
 
   return (
     <section className="relative h-[70vh] md:h-[80vh] min-h-[500px] max-h-[800px] overflow-hidden">
-      {/* Background Image */}
       <div className="absolute inset-0">
         <img
           src={imageSrc}
@@ -59,13 +43,8 @@ const Hero = ({ post }: HeroProps) => {
         <div className="absolute inset-0 hero-gradient" />
       </div>
 
-      {/* Content */}
       <div className="container relative h-full flex items-end pb-12 md:pb-20">
         <div className="max-w-2xl animate-fade-up">
-          <span className={cn('category-badge mb-4', categoryStyles[post.category])}>
-            {categoryLabels[post.category]}
-          </span>
-          
           <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl text-primary-foreground font-medium leading-tight mb-4">
             {post.title}
           </h1>
