@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Category } from '@/data/blogPosts';
 import { Link } from 'react-router-dom';
 import { Plus, Edit2, Trash2, Eye, ArrowLeft, Image, Tag } from 'lucide-react';
 import { blogPosts, BlogPost } from '@/data/blogPosts';
@@ -28,13 +29,22 @@ const Admin = () => {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const [posts, setPosts] = useState(blogPosts);
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    title: string;
+    slug: string;
+    excerpt: string;
+    content: string;
+    tags: string;
+    featuredImage: string;
+    category: Category;
+  }>({
     title: '',
     slug: '',
     excerpt: '',
     content: '',
     tags: '',
     featuredImage: '',
+    category: 'destinations',
   });
 
   const handleEditPost = (post: BlogPost) => {
@@ -46,6 +56,7 @@ const Admin = () => {
       content: post.content.replace(/<[^>]*>/g, ''),
       tags: post.tags.join(', '),
       featuredImage: post.featuredImage,
+      category: post.category,
     });
     setCurrentView('edit');
   };
@@ -59,6 +70,7 @@ const Admin = () => {
       content: '',
       tags: '',
       featuredImage: '/images/takayama.jpg',
+      category: 'destinations',
     });
     setCurrentView('new');
   };
@@ -77,6 +89,7 @@ const Admin = () => {
       slug: formData.slug || formData.title.toLowerCase().replace(/\s+/g, '-'),
       excerpt: formData.excerpt,
       content: `<p>${formData.content.replace(/\n\n/g, '</p><p>')}</p>`,
+      category: formData.category,
       tags: formData.tags.split(',').map((t) => t.trim()),
       featuredImage: formData.featuredImage,
       author: 'Emma',
@@ -95,7 +108,7 @@ const Admin = () => {
     setCurrentView('list');
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
