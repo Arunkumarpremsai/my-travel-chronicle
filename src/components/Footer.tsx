@@ -1,3 +1,4 @@
+// src/components/Footer.tsx
 import { Link } from 'react-router-dom';
 import { Instagram, Twitter, Mail } from 'lucide-react';
 
@@ -6,13 +7,13 @@ const Footer = () => {
     <footer className="bg-muted mt-20">
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Brand */}
+          {/* Brand updated to Tripvanta */}
           <div>
             <Link 
               to="/" 
               className="font-heading text-2xl font-semibold text-foreground"
             >
-              tripvanta
+              Tripvanta
             </Link>
             <p className="mt-4 text-muted-foreground text-sm leading-relaxed max-w-xs">
               Stories from the road, one adventure at a time. Exploring the world 
@@ -83,7 +84,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-12 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} tripvanta. All rights reserved.
+            © {new Date().getFullYear()} Tripvanta. All rights reserved.
           </p>
         </div>
       </div>
