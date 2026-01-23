@@ -12,7 +12,7 @@ const Footer = () => {
               to="/" 
               className="font-heading text-2xl font-semibold text-foreground"
             >
-              Wanderlust
+              tripvanta
             </Link>
             <p className="mt-4 text-muted-foreground text-sm leading-relaxed max-w-xs">
               Stories from the road, one adventure at a time. Exploring the world 
@@ -83,7 +83,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-12 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Wanderlust. All rights reserved.
+            © {new Date().getFullYear()} tripvanta. All rights reserved.
           </p>
         </div>
       </div>
