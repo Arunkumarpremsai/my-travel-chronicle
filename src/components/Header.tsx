@@ -1,3 +1,4 @@
+// src/components/Header.tsx
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -26,12 +27,12 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border">
       <div className="container">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+          {/* Logo updated to Tripvanta */}
           <Link 
             to="/" 
             className="font-heading text-2xl md:text-3xl font-semibold text-foreground hover:text-primary transition-colors"
           >
-            tripvanta
+            Tripvanta
           </Link>
 
           {/* Desktop Navigation */}
