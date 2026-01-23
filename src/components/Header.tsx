@@ -31,7 +31,7 @@ const Header = () => {
             to="/" 
             className="font-heading text-2xl md:text-3xl font-semibold text-foreground hover:text-primary transition-colors"
           >
-            Wanderlust
+            tripvanta
           </Link>
 
           {/* Desktop Navigation */}
