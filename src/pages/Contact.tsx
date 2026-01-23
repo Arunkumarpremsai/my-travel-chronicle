@@ -69,7 +69,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-medium text-foreground mb-1">Currently In</h3>
-                      <p className="text-muted-foreground">Lisbon, Portugal</p>
+                      <p className="text-muted-foreground">Chennai, India</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
