@@ -1,4 +1,3 @@
-// src/components/Footer.tsx
 import { Link } from 'react-router-dom';
 import { Instagram, Twitter, Mail } from 'lucide-react';
 
@@ -7,7 +6,6 @@ const Footer = () => {
     <footer className="bg-muted mt-20">
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Brand updated to Tripvanta */}
           <div>
             <Link 
               to="/" 
@@ -21,24 +19,11 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="font-heading text-lg font-medium text-foreground mb-4">
               Explore
             </h4>
             <nav className="flex flex-col gap-2">
-              <Link to="/category/destinations" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Destinations
-              </Link>
-              <Link to="/category/tips" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Travel Tips
-              </Link>
-              <Link to="/category/food" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Food & Drink
-              </Link>
-              <Link to="/category/culture" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Culture
-              </Link>
               <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                 About Me
               </Link>
@@ -48,31 +33,18 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Social & Newsletter */}
           <div>
             <h4 className="font-heading text-lg font-medium text-foreground mb-4">
               Stay Connected
             </h4>
             <div className="flex items-center gap-4 mb-6">
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-secondary/80 transition-all"
-                aria-label="Instagram"
-              >
+              <a href="#" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-secondary/80 transition-all">
                 <Instagram size={18} />
               </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-secondary/80 transition-all"
-                aria-label="Twitter"
-              >
+              <a href="#" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-secondary/80 transition-all">
                 <Twitter size={18} />
               </a>
-              <a 
-                href="mailto:hello@wanderlust.com" 
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-secondary/80 transition-all"
-                aria-label="Email"
-              >
+              <a href="mailto:hello@tripvanta.com" className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-secondary/80 transition-all">
                 <Mail size={18} />
               </a>
             </div>
