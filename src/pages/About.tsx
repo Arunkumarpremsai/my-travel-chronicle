@@ -34,6 +34,14 @@ const About = () => {
                   className="w-full aspect-[4/5] object-cover rounded-lg shadow-medium"
                 />
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent rounded-lg -z-10" />
+                {/* Updated Location Badge */}
+                <div className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-soft flex items-center gap-2">
+                  <MapPin size={16} className="text-primary" />
+                  <div className="text-xs">
+                    <span className="text-muted-foreground block leading-none mb-1">Currently In</span>
+                    <span className="font-medium text-foreground">Chennai, India</span>
+                  </div>
+                </div>
               </div>
               <div>
                 <h2 className="font-heading text-3xl font-medium text-foreground mb-6">
