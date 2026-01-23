@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Calendar, Clock } from 'lucide-react';
-import { BlogPost, Category } from '@/data/blogPosts';
-import { cn } from '@/lib/utils';
+import { BlogPost } from '@/data/blogPosts';
 
 // Import images
 import takayamaImg from '@/assets/images/takayama.jpg';
@@ -25,20 +24,6 @@ interface BlogCardProps {
   featured?: boolean;
 }
 
-const categoryStyles: Record<Category, string> = {
-  destinations: 'category-destinations',
-  tips: 'category-tips',
-  food: 'category-food',
-  culture: 'category-culture',
-};
-
-const categoryLabels: Record<Category, string> = {
-  destinations: 'Destinations',
-  tips: 'Tips',
-  food: 'Food',
-  culture: 'Culture',
-};
-
 const BlogCard = ({ post, featured = false }: BlogCardProps) => {
   const formattedDate = new Date(post.publishedAt).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -60,9 +45,6 @@ const BlogCard = ({ post, featured = false }: BlogCardProps) => {
             />
             <div className="absolute inset-0 hero-gradient" />
             <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-              <span className={cn('category-badge mb-3', categoryStyles[post.category])}>
-                {categoryLabels[post.category]}
-              </span>
               <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl text-primary-foreground font-medium leading-tight mb-3">
                 {post.title}
               </h2>
@@ -97,9 +79,6 @@ const BlogCard = ({ post, featured = false }: BlogCardProps) => {
           />
         </div>
         <div className="p-5">
-          <span className={cn('category-badge mb-3', categoryStyles[post.category])}>
-            {categoryLabels[post.category]}
-          </span>
           <h3 className="font-heading text-xl font-medium text-foreground leading-snug mb-2 group-hover:text-primary transition-colors">
             {post.title}
           </h3>
